@@ -4,13 +4,19 @@ from flask import Flask,request,jsonify,render_template
 import pickle
 import streamlit as st
 
-st.session_state['answer'] = ''
+st.session_state['answer'] = ''!
+
+st.write(st.session_state)
+
+realans = ['', 'abc', 'edf']
+
 if  st.session_state['answer'] in realans:
-        answerStat = "correct"
+    answerStat = "correct"
 elif st.session_state['answer'] not in realans:
-        answerStat = "incorrect"
+    answerStat = "incorrect"
 
-
+st.write(st.session_state)
+st.write(answerStat)
 app=Flask(__name__)
 model=pickle.load(open('model.pkl','rb'))
 
