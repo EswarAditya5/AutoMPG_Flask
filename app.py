@@ -2,6 +2,7 @@ import numpy as np
 import flask
 from flask import Flask,request,jsonify,render_template
 import pickle
+import streamlit as st
 
 app=Flask(__name__)
 model=pickle.load(open('model.pkl','rb'))
@@ -21,3 +22,10 @@ def predict():
 
 if __name__=='__main__':
     app.run(debug=True)
+
+st.session_state['answer'] = ''
+
+ if  st.session_state['answer'] in realans:
+        answerStat = "correct"
+    elif st.session_state['answer'] not in realans:
+        answerStat = "incorrect"
