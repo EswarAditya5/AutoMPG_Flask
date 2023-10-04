@@ -4,7 +4,7 @@ from flask import Flask,request,jsonify,render_template
 import pickle
 import streamlit as st
 
-st.session_state['answer'] = ''!
+st.session_state['answer'] = ''
 st.write(st.session_state)
 realans = ['', 'abc', 'edf']
 if  st.session_state['answer'] in realans:
