@@ -20,5 +20,5 @@ def predict():
     return render_template('index.html',pred_text='mpg should be{}'.format(output))
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(Debug=True)
 
